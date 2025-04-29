@@ -15,14 +15,14 @@ export function downloadFromLS() {
                 id: Math.round(Math.random() * 1000),
                 name: 'Игрушки',
                 shelf: 'А10',
-                weight: 5,
+                weight: 7,
                 storageTime: new Date('2025-04-30'),
             },
             {
                 id: Math.round(Math.random() * 1000),
                 name: 'Книги',
                 shelf: 'Б05',
-                weight: 7,
+                weight: 4,
                 storageTime: new Date('2025-02-20'),
             },
             {
