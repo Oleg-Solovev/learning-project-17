@@ -1,4 +1,5 @@
 import { delateFromLS } from "./localBase.js"
+import { sortTable } from "./sort.js"
 
 // Получение элемента заголовка
 function getTiteEl(text) {
@@ -88,15 +89,35 @@ function createTableEl() {
     thead.classList.add("thead")
     const trEl = document.createElement("tr")
     const thNameEl = getThEl("Название")
+    let dir = true;
+    thNameEl.addEventListener("click", function (event) {
+        if (event._isClick === true) return
+        sortTable('name');
+    });
     const thShelfEl = getThEl("Полка")
+    thShelfEl.addEventListener("click", function (event) {
+        if (event._isClick === true) return
+        sortTable('shelf');
+    });
     const thWeightEl = getThEl("Вес")
+    thWeightEl.addEventListener("click", function (event) {
+        if (event._isClick === true) return
+        sortTable('weight');
+    });
     const thStorageTimeEl = getThEl("Время хранения")
+    thStorageTimeEl.addEventListener("click", function (event) {
+        if (event._isClick === true) return
+        sortTable('storageTime');
+    });
     const thEl = getThEl("")
     trEl.append(thNameEl, thShelfEl, thWeightEl, thStorageTimeEl, thEl)
     thead.append(trEl)
     tableEl.append(thead)
     return tableEl
 }
+
+
+
 
 // Функция преобразования даты
 function getDateFormat(data) {
